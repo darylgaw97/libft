@@ -1,4 +1,4 @@
-char *ft_strnstr(char *large, char *small, int size)
+char *ft_strnstr(char *large, char *small, size_t length)
 {
     int i;
     int j;
@@ -8,7 +8,7 @@ char *ft_strnstr(char *large, char *small, int size)
     if (*small == '\0')
         return (large);
     // returns first occurence of small in large
-    while (i < size)
+    while (i < length)
     {
         j = 0;
         if (large[i] == small[j])
@@ -17,7 +17,7 @@ char *ft_strnstr(char *large, char *small, int size)
             {
                 j++;
             }
-            if (small[j] == '\0' && i + (j - 1) < size)
+            if (small[j] == '\0' && i + (j - 1) < length)
                 return (large + i);
         }
         i++;
