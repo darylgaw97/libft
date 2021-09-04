@@ -1,4 +1,4 @@
-static int ft_strlen(char *str);
+static int ft_strlen(const char *str);
 
 size_t ft_strlcpy(char *dest, const char *src, size_t size)
 {
@@ -13,10 +13,10 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
         i++;
     }
     dest[i] = '\0';
-    return (ft_strlen(dest));
+    return (ft_strlen(src));
 }
 
-static int ft_strlen(char *str)
+static int ft_strlen(const char *str)
 {
     int i;
 
@@ -25,6 +25,10 @@ static int ft_strlen(char *str)
         i++;
     return (i);
 }
-/*  The strlcpy() function copies up to size - 1 characters from the NUL-terminated string src to dst, NUL-terminating the result.
+
+/*
+    The strlcpy() function copies up to size - 1 characters from the NUL-terminated string src to dst, NUL-terminating the result.
     The strlcpy() function returns the total length of the string it tried to create.
-    For strlcpy() that means the length of src.     */
+    strlcpy returns the length of the string whether or not it was possible to copy it all -- this makes it easier to calculate the required buffer size.
+    For strlcpy() that means the length of src.
+*/
