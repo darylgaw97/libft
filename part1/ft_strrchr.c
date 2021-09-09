@@ -1,20 +1,23 @@
-char *ft_strrchr(char *str, char c)
+char *ft_strrchr(const char *s, int c)
 {
     int i;
-    int pointer;
 
     i = 0;
-    pointer = -1;
-    while (str[i] != '\0')
-    {
-        if (str[i] == c)
-            pointer = i;
+    // iterate to end of the string (NULL byte considers part of the string)
+    while (s[i])
         i++;
+    // iterate to the front to look for first instance of 'c'
+    while (&s[i] != (s - 1))
+    {
+        if (s[i] == c)
+            return((char *)s + i);
+        i--;
     }
-    if (str[i] == '\0' && c == '\0')
-        return (str + i);
-    else if (pointer != -1)
-        return (str + pointer);
-    else
-        return (NULL);
+    // if not found, return NULL (using '\0' here instead of 'NULL' because 'NULL' is undefined in C by default)
+    return ('\0');
 }
+
+/*
+    The strrchr() function shall locate the last occurrence of c (converted to a char) in the string pointed to by s.
+    The terminating NUL character is considered to be part of the string.
+*/
