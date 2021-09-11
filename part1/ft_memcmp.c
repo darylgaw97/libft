@@ -1,14 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-
-int ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int main(void)
-{
-    int s1[5] = {0,1,255,256,300};
-    int s2[5] = {0,257,255,256,301};
-    printf("%i\n", memcmp(s1, s2, 5));
-}
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
