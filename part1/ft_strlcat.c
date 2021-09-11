@@ -1,10 +1,10 @@
 
 static int ft_strlen(const char *str);
 
-size_t ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-    int i;
-    int j;
+    long unsigned int i;
+    long unsigned int j;
     int return_value;
 
     if (dstsize == 0)
@@ -12,7 +12,7 @@ size_t ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize
     return_value = ft_strlen(dst) + ft_strlen(src);
     i = ft_strlen(dst);
     j = 0;
-    while (src[j] && (long unsigned)(i + j) < dstsize - 1)
+    while (src[j] && (i + j) < dstsize - 1)
     {
         dst[i + j] = src[j];
         j++;
