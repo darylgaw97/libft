@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-static int ft_strlen(const char *str);
+static int ft_strlen(char const *str);
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
