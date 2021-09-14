@@ -1,11 +1,10 @@
-
 void *ft_memset(void *s, int c, size_t n)
 {
-    char *temp_s;
+    unsigned char *temp_s;
     unsigned char temp_c;
     long unsigned i;
 
-    temp_s = (char *)s;
+    temp_s = (unsigned char *)s;
     temp_c = (unsigned char)c;
     i = 0;
     while (i < n)
