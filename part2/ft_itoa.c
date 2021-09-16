@@ -9,7 +9,9 @@ char *ft_itoa(int n)
     long divider;
     int i;
 
-    str = malloc(12);   //malloc-ed 12 bytes because max int -2147483648 is 11 chars long, plus 1 byte for null cap
+    str = malloc(12);   //malloc-ed 12 bytes (max int -2147483648 is 11 chars long, +1 byte for null cap)
+    if (str == NULL)
+        return (NULL);
     num = n;
     i = 0;
     if (num < 0)        //checking for negative integers, if yes, first char becomes '-', then num is converted to positive integer
