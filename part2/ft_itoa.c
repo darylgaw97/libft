@@ -21,7 +21,7 @@ char *ft_itoa(int n)
     divider = 1;
     while (num / divider != 0)  //setting 'divider' to the correct size, according to the size of num
         divider *= 10;
-    //start assigning to str each digit, decreasing 'divider' by one zero after each iteration, so that the next digit can be obatined,
+    //start assigning to str each digit, decreasing 'divider' by one zero after each iteration, so that the next digit can be obtained,
     //when 'divider' becomes '0', means that the last digit has been converted to char.
     while ((divider /= 10) != 0)
     {
@@ -40,7 +40,7 @@ static void is_negative(char *str, long *num, int *i)
 }
 
 /*
-    Somewhat confusing syntax as norminette only allows 25 lines per function, a lot of compression in the code above was done,
+    Somewhat confusing syntax as norminette only allows 25 lines per function, a lot of compression was done in the code above,
     hence the reduction in readiblity.
     An alternative is to use helper functions but it could make the code even harder to read if not written well.
     In this case, the "is_negative" function is used to save 4 lines.
