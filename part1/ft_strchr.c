@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char *ft_strchr(char *str, char c)
 {
     // checking if char matches c or already reached th eend of string

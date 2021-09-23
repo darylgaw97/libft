@@ -1,6 +1,6 @@
-static int ft_strlen(const char *str);
+#include "libft.h"
 
-size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
     long unsigned int i;
     long unsigned int j;
@@ -18,14 +18,4 @@ size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
     }
     dst[i + j] = '\0';
     return (return_value);
-}
-
-static int ft_strlen(const char *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
 }

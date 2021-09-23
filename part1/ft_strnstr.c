@@ -1,7 +1,9 @@
+#include "libft.h"
+
 char *ft_strnstr(char *large, char *small, size_t length)
 {
-    int i;
-    int j;
+    size_t i;
+    size_t j;
 
     i = 0;
     // returns pointer to large if small is empty string

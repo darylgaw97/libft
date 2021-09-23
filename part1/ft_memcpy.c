@@ -1,4 +1,6 @@
-void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+#include "libft.h"
+
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
     long unsigned int i;
     char *copy_dest;
@@ -21,4 +23,4 @@ void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
     When copying type "int" make sure to input correct "size" as a bigger integer may require more memory,
     typically just use the "sizeof" operator to prevent allocating the wrong size for whatever variable type that is being copied.
     For example: sizeof(int) == 4 bytes, sizeof(char) == 1 byte
-/*
+*/
