@@ -1,3 +1,5 @@
+#include "libft.h"
+
 t_list *ft_lstlast(t_list *list)
 {
     if (list == NULL)

@@ -2,8 +2,8 @@
 
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    long unsigned int i;
-    long unsigned int j;
+    size_t i;
+    size_t j;
     int return_value;
 
     if (dstsize == 0)

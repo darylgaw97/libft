@@ -9,7 +9,6 @@ int ft_atoi(char *str)
     sign = 1;
     i = 0;
     result = 0;
-
     // skipping white spaces
     while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
         i++;

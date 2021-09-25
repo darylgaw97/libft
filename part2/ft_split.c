@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 static char *make_substr(char const *s, char c);
 static int ft_substrlen(char const *s, char c);

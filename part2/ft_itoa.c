@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 static void is_negative(char *str, long *num, int *i);
 

@@ -1,6 +1,4 @@
-#include <stdlib.h>
-
-static int ft_strlen(char const *str);
+#include "libft.h"
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -19,14 +17,4 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     }
     new_str[i] = '\0';
     return (new_str);
-}
-
-static int ft_strlen(char const *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
 }
