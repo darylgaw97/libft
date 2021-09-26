@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char *ft_strrchr(const char *s, int c)
 {
     int i;
@@ -13,8 +15,8 @@ char *ft_strrchr(const char *s, int c)
             return((char *)s + i);
         i--;
     }
-    // if not found, return NULL (using '\0' here instead of 'NULL' because 'NULL' is undefined in C by default)
-    return ('\0');
+    // if not found, return NULL
+    return (NULL);
 }
 
 /*

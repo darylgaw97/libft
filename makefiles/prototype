@@ -1,0 +1,28 @@
+part1 = ft_atoi.c ft_bzero.c ft_calloc.c \
+		ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+		ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
+		ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strdup.c \
+		ft_strncmp.c ft_strnstr.c ft_strchr.c ft_strrchr.c \
+		ft_tolower.c ft_toupper.c
+
+part2 = ft_itoa.c ft_split.c ft_striteri.c \
+		ft_strjoin.c ft_strmapi.c ft_substr.c
+
+bonus = ft_lstadd_back.c ft_lstadd_front.c \
+		ft_lstlast.c ft_lstnew.c ft_lstsize.c \
+
+source = $(part1) $(part2) $(bonus)
+objects = $(source:.c=.o)
+NAME = libft.a
+
+test: $(objects) libft.h test.o
+	gcc -o test test.o $(objects)
+
+$(objects): libft.h $(source)
+
+$(NAME): libft.h $(objects)
+	ar rcs $(NAME) $(objects)
+
+.PHONY: clean
+clean:
+	rm test *.o

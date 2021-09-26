@@ -36,18 +36,18 @@ char    ft_toupper(char c);
 
 //part2
 char    *ft_itoa(int n);
-char    **ft_split(char const *s, char c)
-void    ft_striteri(char *s, void(*f)(unsigned int, char *))
-char    *ft_strjoin(char const *s1, char const *s2)
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char    **ft_split(char const *s, char c);
+void    ft_striteri(char *s, void(*f)(unsigned int, char *));
+char    *ft_strjoin(char const *s1, char const *s2);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char    *ft_substr(char const *s, unsigned int start, size_t len);
 
 //bonus part
-void    ft_lstadd_front(t_list **lst, t_list *new)
-void    ft_lstadd_back(t_list **lst, t_list *new)
-t_list  *ft_lstlast(t_list *list)
-t_list  *ft_lstnew(void *content)
-int     ft_lstsize(t_list *lst)
+void    ft_lstadd_front(t_list **lst, t_list *new);
+void    ft_lstadd_back(t_list **lst, t_list *new);
+t_list  *ft_lstlast(t_list *list);
+t_list  *ft_lstnew(void *content);
+int     ft_lstsize(t_list *lst);
 
 
 #endif

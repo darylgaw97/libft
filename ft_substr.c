@@ -2,7 +2,7 @@
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int i;
+    size_t i;
 
     char *substr = malloc((sizeof(char) * len) + 1);
     if (substr == NULL)
