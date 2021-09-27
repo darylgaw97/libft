@@ -4,5 +4,6 @@
 int main()
 {
     char *str = "abcde";
-    printf("%i\n", ft_strlen(str));
+    char *dest = malloc(sizeof(char *));
+    printf("%s\n", (char *)ft_memcpy(dest, str, 5));
 }

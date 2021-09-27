@@ -2,23 +2,21 @@
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    long unsigned int i;
-    char *copy_dest;
-    char *copy_src;
+    size_t i;
 
-    copy_dest = (char *)dest;
-    copy_src = (char *)src;
+    if (dest == NULL || src == NULL)
+        return (NULL);
     i = 0;
     while (i < n)
     {
-        copy_dest[i] = copy_src[i];
+        ((char *)dest)[i] = ((char *)src)[i];
         i++;
     }
-    return (copy_dest);
+    return (dest);
 }
 
 /*
-    Typecasting "dest" and "src" into type "char *" to facilitate variable assignment.
+    Typecasting "dest" and "src" into type "char *" to allow dereferencing of type void.
 
     When copying type "int" make sure to input correct "size" as a bigger integer may require more memory,
     typically just use the "sizeof" operator to prevent allocating the wrong size for whatever variable type that is being copied.

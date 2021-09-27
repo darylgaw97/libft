@@ -2,7 +2,7 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    unsigned int i;
+    size_t i;
     unsigned char *memory1;
     unsigned char *memory2;
 
@@ -20,8 +20,8 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
 /*
     type cast 's1' and 's2' into "(unsigned char *)" and assigned them to "memory1" and "memory2" to allow dereferencing.
-    
-    since 's1' and 's2' is being compared as "unsigned char"s, maximum integer value allowed before wrap-around occurs is 255, 
+
+    since 's1' and 's2' is being compared as "unsigned char"s, maximum integer value allowed before wrap-around occurs is 255,
     hence,
     if integer of 256 is compared to 0, memcpy will return a value of '0' thinking that there is no difference.
 */
