@@ -3,9 +3,10 @@
 char *ft_strdup(const char *s)
 {
     int i;
-    char *duplicate = malloc(ft_strlen(s) + 1);
+    char *duplicate;
 
-    if (duplicate == NULL)
+    duplicate = malloc(ft_strlen(s) + 1);
+    if (duplicate == NULL || s == NULL)
         return (NULL);
     i = 0;
     while (s[i])

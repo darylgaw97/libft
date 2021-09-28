@@ -27,7 +27,7 @@ char    *ft_strchr(char *str, char c);
 char    *ft_strdup(const char *s);
 size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t  ft_strlcpy(char *dest, const char *src, size_t size);
-int     ft_strlen(const char *str);
+int     ft_strlen(const char* str);
 int     ft_strncmp(const char *s1, const char *s2, size_t n);
 char    *ft_strnstr(char *large, char *small, size_t length);
 char    *ft_strrchr(const char *s, int c);
@@ -51,5 +51,6 @@ int     ft_lstsize(t_list *lst);
 void ft_lstdelone(t_list *lst, void (*del)(void *));
 void ft_lstclear(t_list **lst, void (*del)(void *));
 void ft_lstiter(t_list *lst, void (*f)(void *));
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
