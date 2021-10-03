@@ -12,8 +12,8 @@ typedef struct  s_list
 
 //part1
 int ft_atoi(char *str);
-void ft_bzero(void *s, size_t n);
-void *ft_calloc(size_t nmemb, size_t size);
+void    ft_bzero(void *s, size_t n);
+void    *ft_calloc(size_t nmemb, size_t size);
 int     ft_isalnum(char c);
 int     ft_isalpha(char c);
 int     ft_isascii(char c);

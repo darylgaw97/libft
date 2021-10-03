@@ -22,13 +22,16 @@ BONUS_OBJECTS = $(BONUS:.c=.o)
 
 .PHONY: all clean fclean re
 
-all: $(NAME)
+all: $(NAME) bonus
 
-$(NAME): $(OBJECTS) libft.h
-	ar rcs $(NAME) $<
+$(NAME): $(OBJECTS)
+	ar rcs $(NAME) $?
 
-bonus: $(BONUS_OBJECTS) libft.h
-	ar rcs $(NAME) $<
+normal: $(OBJECTS)
+	ar rcs $(NAME) $?
+
+bonus: $(BONUS_OBJECTS)
+	ar rcs $(NAME) $?
 
 clean:
 	rm -rf $(OBJECTS) $(BONUS_OBJECTS)

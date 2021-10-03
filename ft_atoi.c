@@ -1,5 +1,6 @@
 #include "libft.h"
 
+static int ft_isspace(const char c);
 int ft_atoi(char *str)
 {
     int sign;
@@ -9,8 +10,7 @@ int ft_atoi(char *str)
     sign = 1;
     i = 0;
     result = 0;
-    // skipping white spaces
-    while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+    while (ft_isspace(str[i]))
         i++;
     // checking for positive or negative sign
     if (str[i] == '+')
@@ -30,4 +30,11 @@ int ft_atoi(char *str)
     if (sign == -1)
         result *= sign;
     return (result);
+}
+
+static int ft_isspace(const char c)
+{
+    if (c == 32 || (c >= 9 && c <= 13))
+        return (1);
+    return (0);
 }
