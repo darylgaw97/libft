@@ -1,7 +1,8 @@
 #include "libft.h"
 
 static int ft_isspace(const char c);
-int ft_atoi(char *str)
+
+int ft_atoi(const char *str)
 {
     int sign;
     int i;
