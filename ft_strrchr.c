@@ -11,7 +11,7 @@ char *ft_strrchr(const char *s, int c)
     // iterate to the front to look for first instance of 'c'
     while (&s[i] != (s - 1))
     {
-        if (s[i] == c)
+        if (s[i] == (unsigned char)c)
             return ((char *)s + i);
         i--;
     }

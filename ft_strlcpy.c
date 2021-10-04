@@ -2,12 +2,12 @@
 
 size_t ft_strlcpy(char *dest, const char *src, size_t size)
 {
-    int i;
+    size_t i;
 
     if (size == 0)
-        return(0);
+        return (ft_strlen(src));
     i = 0;
-    while (src[i] && (long unsigned)i < size - 1)   // type casting 'i' to prevent error message from gcc compiler (comparing int against long unsigned)
+    while (src[i] && i < size - 1)
     {
         dest[i] = src[i];
         i++;
