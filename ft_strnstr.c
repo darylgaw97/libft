@@ -1,29 +1,30 @@
 #include "libft.h"
 
-char *ft_strnstr(char *large, char *small, size_t length)
+//char *ft_strnstr(char *haystack, char *needle, size_t length)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 {
     size_t i;
     size_t j;
 
     i = 0;
-    // returns pointer to large if small is empty string
-    if (*small == '\0')
-        return (large);
-    // returns first occurence of small in large
+    // returns pointer to haystack if needle is empty string
+    if (*needle == '\0')
+        return (haystack);
+    // returns first occurence of needle in haystack
     while (i < length)
     {
         j = 0;
-        if (large[i] == small[j])
+        if (haystack[i] == needle[j])
         {
-            while (large[i + j] == small[j])
+            while (haystack[i + j] == needle[j])
             {
                 j++;
             }
-            if (small[j] == '\0' && i + (j - 1) < length)
-                return (large + i);
+            if (needle[j] == '\0' && i + (j - 1) < length)
+                return (haystack + i);
         }
         i++;
     }
-    // returns NULL if small not found in large
+    // returns NULL if needle not found in haystack
     return (NULL);
 }
