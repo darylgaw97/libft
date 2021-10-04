@@ -10,3 +10,9 @@ https://randu.org/tutorials/c/libraries.php
 https://medium.com/@StueyGK/what-is-c-static-library-fb895b911db1
 #library creation and usage
 
+
+
+//////////////////////////////////////////////////////////////////////////////
+library testing source code:
+https://github.com/Tripouille/libftTester
+
