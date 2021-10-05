@@ -22,7 +22,7 @@ BONUS_OBJECTS = $(BONUS:.c=.o)
 
 .PHONY: all clean fclean re
 
-all: $(NAME) bonus
+all: $(NAME) bonus clean
 
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $?

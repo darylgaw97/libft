@@ -1,41 +1,56 @@
 #include "libft.h"
-#include <stdio.h>
 
-char *ft_strtrim(char const *s1, char const *set);
+int find_start(char const *s1, char const *set);
+int find_end(char const *s1, char const *set);
 static int in_set(char const c, char const *set);
-
-int main (void)
-{
-    char *str = NULL;
-
-    str = ft_strtrim("   xxxtripouille   xxx", " x");
-    printf("%s\n", str);
-    free (str);
-}
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-    char *trimmed;
+    char *trim;
+    int i;
+    int j;
+    int k;
+
+    if (s1 == NULL || set == NULL)
+        return (NULL);
+    i = find_start(s1, set);
+    j = find_end(s1, set);
+    if (i <= j)
+    {
+        if (!(trim = malloc(j - i + 2)))
+            return (NULL);
+        k = 0;
+        while (i <= j)
+            trim[k++] = s1[i++];
+        trim[k] = '\0';
+        return (trim);
+    }
+    trim = malloc(1);
+    trim[0] = '\0';
+    return (trim);
+}
+
+int find_start(char const *s1, char const *set)
+{
     int i;
 
-    if (!(trimmed = malloc(ft_strlen(s1 + 1))))
-        return (NULL);
-    while (in_set(*s1, set))
-        s1++;
     i = 0;
-    while (s1[i])
-    {
-        trimmed[i] = s1[i];
+    while (in_set(s1[i], set))
         i++;
-    }
-    trimmed[i] = '\0';
-    while (s1 + i >= s1)
-    {
-        if (in_set(s1[i], set))
-            trimmed[i] = '\0';
-        i--;
-    }
-    return (trimmed);
+    return (i);
+}
+
+int find_end(char const *s1, char const *set)
+{
+    int j;
+
+    j = 0;
+    while (s1[j])
+        j++;
+    j--;
+    while (in_set(s1[j], set) && s1 + j > s1)
+        j--;
+    return (j);
 }
 
 static int in_set(char const c, char const *set)
