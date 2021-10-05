@@ -3,27 +3,20 @@
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t i;
-    size_t j;
 
-    i = 0;
-    // returns pointer to haystack if needle is empty string
+    if (haystack == NULL || needle == NULL)
+        return (NULL);
     if (*needle == '\0')
-        return ((char *)haystack);
-    // returns first occurence of needle in haystack
-    while (i < len)
+        return ("");
+    i = 0;
+    while (haystack[i] && i < len)
     {
-        j = 0;
-        if (haystack[i] == needle[j])
+        if (haystack[i] == needle[0] && i + (ft_strlen(needle) - 1) < len)
         {
-            while (haystack[i + j] == needle[j])
-            {
-                j++;
-            }
-            if (needle[j] == '\0' && i + (j - 1) < len)
+            if (!(ft_strncmp(haystack + i,  needle, ft_strlen(needle))))
                 return ((char *)(haystack + i));
         }
         i++;
     }
-    // returns NULL if needle not found in haystack
     return (NULL);
 }
