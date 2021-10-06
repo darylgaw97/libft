@@ -1,6 +1,5 @@
 #include "libft.h"
 
-static char *int_min(void);
 static int numstrlen(int n);
 static char *make_a(char *a, int n);
 
@@ -9,8 +8,8 @@ char *ft_itoa(int n)
     char *a;
 
     if (n == INT_MIN)
-        return (int_min());
-    if (!(a = malloc(numstrlen(n)) + 1))
+        return (ft_strdup("-2147483648"));
+    if (!(a = malloc(numstrlen(n) + 1)))
         return (NULL);
     return (make_a(a, n));
 }
@@ -36,16 +35,6 @@ static char *make_a(char *a, int n)
         i--;
         n = n / 10;
     }
-    return (a);
-}
-
-static char *int_min(void)
-{
-    char *a;
-
-    if (!(a = malloc(12)))
-        return (NULL);
-    a = "-2147483648";
     return (a);
 }
 
