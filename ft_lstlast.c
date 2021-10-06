@@ -1,10 +1,10 @@
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *list)
+t_list *ft_lstlast(t_list *lst)
 {
-    if (list == NULL)
+    if (lst == NULL)
         return (NULL);
-    while (list->next != NULL)
-        list = list->next;
-    return (list);
+    while (lst->next != NULL)
+        lst = lst->next;
+    return (lst)
 }
