@@ -2,16 +2,17 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list *n;
+    t_list *ret;
 
-    if(lst == NULL || f == NULL || del == NULL)
+    ret = malloc(sizeof(t_list));
+    if (lst == NULL || f == NULL || del == NULL || ret == NULL)
         return (NULL);
-    n = lst;
-    while (n)
+    while (lst)
     {
-        n->content = f(n->content);
-        del(n->content);
-        n = n->next;
+        ret->content = f(lst->content);
+        if (!(ret->next = malloc(sizeof(t_list))))
+            return (NULL);
+        ret = ret->next;
     }
-    return (lst);
+    return (ret);
 }
