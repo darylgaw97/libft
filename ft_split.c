@@ -2,7 +2,7 @@
 
 static int count_strings(char const *s, char c);
 static char **no_substr(char **s);
-static char *make_substr(char const *s, char c);
+static char *make_substr(char const *s, char c, int *i);
 static int substrlen(char const *s, char c);
 
 char    **ft_split(char const *s, char c)
@@ -14,7 +14,8 @@ char    **ft_split(char const *s, char c)
     if (s == NULL)
         return (NULL);
     str_count = count_strings(s, c);
-    if (!(strings = malloc(sizeof(char *) * str_count + 1)))
+    strings = malloc(sizeof(char *) * str_count + 1);
+    if (strings == NULL)
         return (NULL);
     if (str_count == 0)
         return (no_substr(strings));
@@ -26,9 +27,8 @@ char    **ft_split(char const *s, char c)
             i++;
         if (s[i] == '\0')
             break;
-        strings[str_count] = make_substr((s + i), c);
+        strings[str_count] = make_substr((s + i), c, &i);
         str_count++;
-        i += substrlen((s + i), c);
     }
     strings[str_count] = NULL;
     return (strings);
@@ -61,21 +61,22 @@ static char **no_substr(char **s)
     return (s);
 }
 
-static char *make_substr(char const *s, char c)
+static char *make_substr(char const *s, char c, int *i)
 {
     char *substr;
-    int i;
+    int j;
 
     substr = malloc(substrlen(s, c) + 1);
     if (substr == NULL)
         return (NULL);
-    i = 0;
-    while (s[i] && s[i] != c)
+    j = 0;
+    while (s[j] && s[j] != c)
     {
-        substr[i] = s[i];
-        i++;
+        substr[j] = s[j];
+        j++;
     }
-    substr[i] = '\0';
+    substr[j] = '\0';
+    *i += substrlen(s, c);
     return (substr);
 }
 

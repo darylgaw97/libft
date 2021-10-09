@@ -9,7 +9,8 @@ char *ft_itoa(int n)
 
     if (n == INT_MIN)
         return (ft_strdup("-2147483648"));
-    if (!(a = malloc(numstrlen(n) + 1)))
+    a = malloc(numstrlen(n) + 1);
+    if (a == NULL)
         return (NULL);
     return (make_a(a, n));
 }

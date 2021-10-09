@@ -1,7 +1,7 @@
 #include "libft.h"
 
-int find_start(char const *s1, char const *set);
-int find_end(char const *s1, char const *set);
+static int find_start(char const *s1, char const *set);
+static int find_end(char const *s1, char const *set);
 static int in_set(char const c, char const *set);
 
 char *ft_strtrim(char const *s1, char const *set)
@@ -17,7 +17,8 @@ char *ft_strtrim(char const *s1, char const *set)
     j = find_end(s1, set);
     if (i <= j)
     {
-        if (!(trim = malloc(j - i + 2)))
+        trim = malloc(j - i + 2);
+        if (trim == NULL)
             return (NULL);
         k = 0;
         while (i <= j)
@@ -30,7 +31,7 @@ char *ft_strtrim(char const *s1, char const *set)
     return (trim);
 }
 
-int find_start(char const *s1, char const *set)
+static int find_start(char const *s1, char const *set)
 {
     int i;
 
@@ -40,7 +41,7 @@ int find_start(char const *s1, char const *set)
     return (i);
 }
 
-int find_end(char const *s1, char const *set)
+static int find_end(char const *s1, char const *set)
 {
     int j;
 

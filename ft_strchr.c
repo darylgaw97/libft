@@ -2,10 +2,12 @@
 
 char *ft_strchr(const char *s, int c)
 {
+    if (s == NULL)
+        return (NULL);
     while (*s)
     {
         if (*s == (unsigned char)c)
-            return((char *)s);
+            return ((char *)s);
         s++;
     }
     if (c == 0)

@@ -1,9 +1,9 @@
 int ft_strlen(const char *str)
 {
-    int j;
+    int i;
 
-    j = 0;
-    while (str[j])
-        j++;
-    return (j);
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
 }
