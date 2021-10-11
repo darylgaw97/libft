@@ -1,6 +1,13 @@
 #include "libft.h"
+#include <stdio.h>
 
 static int ft_isspace(const char c);
+
+int main()
+{
+    printf("%i\n", ft_atoi("2147483648"));
+    printf("%i\n", atoi("2147483648"));
+}
 
 int ft_atoi(const char *str)
 {

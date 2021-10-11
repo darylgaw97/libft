@@ -4,9 +4,11 @@ char *ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
     char *mapped;
     int i;
-
+    
+    if (s == NULL || f == NULL)
+        return (malloc(0))
     mapped = ft_strdup(s);
-    if (mapped == NULL || s == NULL || f == NULL)
+    if (mapped == NULL)
         return (NULL);
     i = 0;
     while (s[i])

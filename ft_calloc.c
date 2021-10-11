@@ -2,10 +2,11 @@
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
-    unsigned char *memory = malloc(nmemb * size);
+    unsigned char *memory;
     long unsigned i;
-
-    if (memory == NULL || nmemb * size == 0)
+    
+    memory = malloc(nmemb * size);
+    if (memory == NULL)
         return (NULL);
     i = 0;
     while (i < nmemb * size)
