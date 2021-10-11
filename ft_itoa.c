@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 static int numstrlen(int n);
 static char *make_a(char *a, int n);
@@ -24,8 +25,10 @@ static char *make_a(char *a, int n)
     {
         a[i] = '-';
         n *= -1;
+        i = numstrlen(n) + 1;
     }
-    i = numstrlen(n);
+    else
+        i = numstrlen(n);
     a[i] = '\0';
     i--;
     if (n == 0)
