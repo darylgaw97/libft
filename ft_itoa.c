@@ -7,7 +7,7 @@ char	*ft_itoa(int n)
 {
 	char	*a;
 
-	if (n == INT_MIN)
+	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	a = malloc(numstrlen(n) + 1);
 	if (a == NULL)

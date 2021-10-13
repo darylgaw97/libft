@@ -10,7 +10,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len < (unsigned)ft_strlen(s))
 		substr = malloc(len + 1);
 	else
-		substr = malloc(ft_strlen(s + 1));
+		substr = malloc(ft_strlen(s) + 1);
 	if (substr == NULL)
 		return (NULL);
 	if (start >= (unsigned)ft_strlen(s))

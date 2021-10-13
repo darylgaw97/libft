@@ -14,7 +14,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	str_count = count_strings(s, c);
-	strings = malloc(sizeof(char *) * str_count + 1);
+	strings = malloc(sizeof(char *) * (str_count + 1));
 	if (strings == NULL)
 		return (NULL);
 	if (str_count == 0)

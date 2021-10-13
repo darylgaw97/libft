@@ -7,9 +7,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*joined;
 
 	if (s1 == NULL)
-		return ((char *)(s2));
+		return (ft_strdup(s2));
 	if (s2 == NULL)
-		return ((char *)(s1));
+		return (ft_strdup(s1));
 	joined = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (joined == NULL)
 		return (NULL);

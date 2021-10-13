@@ -5,8 +5,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	char	*mapped;
 	int		i;
 
-	if (s == NULL || f == NULL)
-		return (malloc(0));
+	if (s == NULL)
+		return (ft_strdup(""));
 	mapped = ft_strdup(s);
 	if (mapped == NULL)
 		return (NULL);
