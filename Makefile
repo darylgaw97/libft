@@ -34,3 +34,4 @@ clean:
 
 fclean: clean
 	rm -rf *.o libft.a
+

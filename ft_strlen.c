@@ -1,9 +1,11 @@
-int ft_strlen(const char *str)
-{
-    int i;
+#include "libft.h"
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
