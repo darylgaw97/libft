@@ -2,9 +2,9 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *substr;
-	size_t slen;
-	size_t i;
+	char	*substr;
+	size_t	slen;
+	size_t	i;
 
 	if (!s || start >= ft_strlen(s))
 		return (ft_strdup(""));
