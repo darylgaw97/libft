@@ -13,6 +13,8 @@ bonus = ft_lstadd_back.c ft_lstadd_front.c \
 		ft_lstdelone.c ft_lstclear.c \
 		ft_lstiter.c ft_lstmap.c
 
+mine = ft_putchar.c ft_putstr.c
+
 .PHONY: all fclean clean re
 
 NAME = libft.a
@@ -25,6 +27,9 @@ $(NAME): $(mandatory:.c=.o)
 	ar rcs libft.a $?
 
 bonus: $(bonus:.c=.o)
+	ar rcs libft.a $?
+
+mine: $(mine:.c=.o)
 	ar rcs libft.a $?
 
 re: fclean all
