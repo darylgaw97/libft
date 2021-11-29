@@ -15,7 +15,7 @@ bonus = ft_lstadd_back.c ft_lstadd_front.c \
 
 mine = ft_putchar.c ft_putstr.c
 
-.PHONY: all fclean clean re
+.PHONY: all fclean clean re push
 
 NAME = libft.a
 CC = gcc
@@ -40,3 +40,9 @@ clean:
 fclean: clean
 	rm -rf *.o libft.a
 
+push: fclean
+	git status
+	git add .
+	git commit -m "speedpush"
+	git push
+	git status
