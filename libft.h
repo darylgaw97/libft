@@ -62,7 +62,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /*my functions*/
 void	ft_putchar(int c);
 int		ft_putstr(char *str);
-char	*ltoa(long n);
-char	*uitoa(unsigned int n);
+char	*ft_ltoa(long n);
+char	*ft_uitoa(unsigned int n);
 
 #endif

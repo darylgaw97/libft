@@ -20,14 +20,7 @@ static char	*make_a(char *a, long n)
 	long	i;
 
 	i = 0;
-	if (n < 0)
-	{
-		a[i] = '-';
-		n *= -1;
-		i = numstrlen(n) + 1;
-	}
-	else
-		i = numstrlen(n);
+	i = numstrlen(n);
 	a[i] = '\0';
 	i--;
 	if (n == 0)
