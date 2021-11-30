@@ -61,6 +61,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*my functions*/
 void	ft_putchar(int c);
-int		ft_putstr(char *str);
+int	ft_putstr(char *str);
+char	*ltoa(long n);
 
 #endif
