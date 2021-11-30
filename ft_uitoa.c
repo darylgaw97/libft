@@ -3,12 +3,10 @@
 static int	numstrlen(unsigned int n);
 static char	*make_a(char *a, unsigned int n);
 
-char	*ft_ltoa(unsigned int n)
+char	*ft_uitoa(unsigned int n)
 {
 	char	*a;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	a = malloc(numstrlen(n) + 1);
 	if (a == NULL)
 		return (NULL);
@@ -39,11 +37,6 @@ static int	numstrlen(unsigned int n)
 	int	i;
 
 	i = 1;
-	if (n < 0)
-	{
-		n *= -1;
-		i++;
-	}
 	while (n / 10 != 0)
 	{
 		n /= 10;

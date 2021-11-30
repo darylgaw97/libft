@@ -13,7 +13,7 @@ bonus = ft_lstadd_back.c ft_lstadd_front.c \
 		ft_lstdelone.c ft_lstclear.c \
 		ft_lstiter.c ft_lstmap.c
 
-mine = ft_putchar.c ft_putstr.c
+mine = ft_putchar.c ft_putstr.c ft_ltoa.c ft_uitoa.c
 
 .PHONY: all fclean clean re push
 
