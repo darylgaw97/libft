@@ -60,7 +60,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*my functions*/
-void	ft_putchar(int c);
+int		ft_putchar(int c);
 int		ft_putstr(char *str);
 char	*ft_ltoa(long n);
 char	*ft_uitoa(unsigned int n);
