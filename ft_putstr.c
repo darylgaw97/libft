@@ -1,10 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgaw <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/11 14:07:55 by dgaw              #+#    #+#             */
+/*   Updated: 2021/12/11 14:08:09 by dgaw             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-    int str_len;
-    
-    str_len = (ft_strlen(str));
-    write(1, str, str_len);
-    return (str_len);
+	while (*str)
+		write(1, str++, 1);
 }
