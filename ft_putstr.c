@@ -6,14 +6,13 @@
 /*   By: dgaw <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:07:55 by dgaw              #+#    #+#             */
-/*   Updated: 2021/12/11 14:08:09 by dgaw             ###   ########.fr       */
+/*   Updated: 2021/12/11 14:34:06 by dgaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-	while (*str)
-		write(1, str++, 1);
+	return (write(1, str, ft_strlen(str)));
 }
