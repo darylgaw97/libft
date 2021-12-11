@@ -6,7 +6,7 @@
 /*   By: dgaw <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:23:04 by dgaw              #+#    #+#             */
-/*   Updated: 2021/12/11 14:34:27 by dgaw             ###   ########.fr       */
+/*   Updated: 2021/12/11 14:43:26 by dgaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /*my functions*/
 int		ft_putchar(int c);
 int		ft_putstr(char *str);
+char	*ft_uitoa(unsigned int n);
 
 #endif
